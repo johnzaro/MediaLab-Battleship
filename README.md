@@ -1,1 +1,1 @@
-# MediaLab-Battleship
+# MediaLab Battleship
