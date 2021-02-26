@@ -20,6 +20,11 @@ public class ScenarioId
         label.setText(message);
 
         TextField nameInput = new TextField();
+        nameInput.setOnAction(e ->
+        {
+            answer = Integer.parseInt(nameInput.getText());
+            window.close();
+        });
         
         Button enterButton = new Button("Enter");
         enterButton.setOnAction(e ->

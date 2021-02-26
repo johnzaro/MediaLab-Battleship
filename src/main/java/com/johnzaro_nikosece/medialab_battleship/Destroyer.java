@@ -4,6 +4,9 @@ public class Destroyer extends Ship
 {
 	Destroyer(int x, int y, boolean isHorizontal)
 	{
+		shipType = ShipType.DESTROYER;
+		shipState = ShipState.OPERATING;
+		
 		typeOfShip = 5;
 		shipSize = 2;
 		successfulShotPoints = 50;

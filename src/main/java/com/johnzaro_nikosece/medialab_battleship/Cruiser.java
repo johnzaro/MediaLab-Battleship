@@ -4,6 +4,9 @@ public class Cruiser extends Ship
 {
 	Cruiser(int x, int y, boolean isHorizontal)
 	{
+		shipType = ShipType.CRUISER;
+		shipState = ShipState.OPERATING;
+		
 		typeOfShip = 3;
 		shipSize = 3;
 		successfulShotPoints = 100;

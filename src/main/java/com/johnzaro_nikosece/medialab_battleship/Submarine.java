@@ -4,6 +4,9 @@ public class Submarine extends Ship
 {
 	Submarine(int x, int y, boolean isHorizontal)
 	{
+		shipType = ShipType.SUBMARINE;
+		shipState = ShipState.OPERATING;
+		
 		typeOfShip = 4;
 		shipSize = 3;
 		successfulShotPoints = 100;

@@ -4,6 +4,9 @@ public class Battleship extends Ship
 {
 	Battleship(int x, int y, boolean isHorizontal)
 	{
+		shipType = ShipType.BATTLESHIP;
+		shipState = ShipState.OPERATING;
+		
 		typeOfShip = 2;
 		shipSize = 4;
 		successfulShotPoints = 250;

@@ -4,6 +4,9 @@ public class Carrier extends Ship
 {
 	Carrier(int x, int y, boolean isHorizontal)
 	{
+		shipType = ShipType.CARRIER;
+		shipState = ShipState.OPERATING;
+		
 		typeOfShip = 1;
 		shipSize = 5;
 		successfulShotPoints = 350;
