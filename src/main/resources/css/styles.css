@@ -1,0 +1,94 @@
+.font-size-15
+{
+	-fx-font-size: 15;
+}
+
+.font-size-20
+{
+	-fx-font-size: 20;
+}
+
+.font-size-25
+{
+	-fx-font-size: 25;
+}
+
+.border-2px-black
+{
+	-fx-border-width: 2px;
+	-fx-border-color: black;
+}
+
+.border-4px-black
+{
+	-fx-border-width: 4px;
+	-fx-border-color: black;
+}
+
+.padding
+{
+	-fx-padding: 5px 10px;
+}
+
+#user-border
+{
+	-fx-border-width: 5px;
+	-fx-border-color: #34495e;
+	-fx-border-radius: 10px;
+}
+
+#ship-hit
+{
+    -fx-background-color: #e74c3c;
+}
+
+#sea-cell
+{
+    -fx-background-color: #3498db;
+}
+
+#sea-cell-hover
+{
+	-fx-background-color: #66D5D5;
+}
+
+#sea-cell-shot
+{
+	-fx-background-color: #95a5a6;
+}
+
+#carrier-cell
+{
+	-fx-background-color: #9b59b6;
+}
+
+#battleship-cell
+{
+	-fx-background-color: #34495e;
+}
+
+#cruiser-cell
+{
+	-fx-background-color: #ED7D31;
+}
+
+#submarine-cell
+{
+	-fx-background-color: #FEFF02;
+}
+
+#destroyer-cell
+{
+	-fx-background-color: #A8D08E;
+}
+
+.table-view .table-cell, .table-view .column-header .label
+{
+	-fx-alignment: CENTER;
+	-fx-font-size: 15;
+}
+
+* :disabled
+{
+	-fx-opacity: 1;
+}
