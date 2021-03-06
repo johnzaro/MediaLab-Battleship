@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class InputFilesReader
 {
@@ -49,11 +50,11 @@ public class InputFilesReader
 			CustomGridCell[][] currentGridList = isPlayersFile ? Main.player.getCells() : Main.cpu.getCells();
 			
 			String fileName = (isPlayersFile ? "player" : "enemy") + String.format("_%d.txt", Main.selectedInputID);
-			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(Main.class.getResource("/medialab/" + fileName).getFile())));
-			
+			Scanner input = new Scanner(Main.class.getResourceAsStream("/medialab/" + fileName),"UTF-8");
 			String line;
-			while((line = reader.readLine()) != null)
+			while(input.hasNext())
 			{
+				line = input.nextLine();
 				String[] elements = line.split(",");
 				
 				if(elements.length == 4)
@@ -148,9 +149,10 @@ public class InputFilesReader
 				}
 				else throw new WrongFileFormatException();
 			}
-			reader.close();
+			input.close();
+			
 		}
-		catch(IOException | NullPointerException e)
+		catch(NullPointerException e)
 		{
 			Main.resetGrids();
 			showInputErrorAlert((isPlayersFile ? "Player" : "Enemy") + " Input File - FileNotFoundException", "Input File Not Found.");

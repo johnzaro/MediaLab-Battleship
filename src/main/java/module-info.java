@@ -1,6 +1,7 @@
-module medialab_battleship
+module battleship
 {
 	requires javafx.controls;
+	requires javafx.graphics;
 	requires javafx.media;
 	
 	exports com.johnzaro_nikosece.medialab_battleship.dataStructures.ship;

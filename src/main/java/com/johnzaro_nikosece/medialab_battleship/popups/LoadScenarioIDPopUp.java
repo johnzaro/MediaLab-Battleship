@@ -17,6 +17,7 @@ import javafx.util.Duration;
 public class LoadScenarioIDPopUp
 {
 	private Stage stage;
+	private TextField idInputTextField;
 	
 	private int id;
 	
@@ -34,9 +35,9 @@ public class LoadScenarioIDPopUp
 		Label label = new Label("Provide a SCENARIO-ID:");
 		label.getStyleClass().add("font-size-20");
 		
-		TextField nameInput = new TextField();
-		nameInput.getStyleClass().add("font-size-20");
-		nameInput.setPrefSize(90, 35);
+		idInputTextField = new TextField();
+		idInputTextField.getStyleClass().add("font-size-20");
+		idInputTextField.setPrefSize(90, 35);
 		
 		Tooltip tooltip = new Tooltip("The ID Must Be An Integer Between 1 And 99999");
 		tooltip.setPrefWidth(250);
@@ -45,17 +46,17 @@ public class LoadScenarioIDPopUp
 		tooltip.setShowDuration(Duration.INDEFINITE);
 		tooltip.setWrapText(true);
 		tooltip.setHideOnEscape(false);
-		nameInput.setTooltip(tooltip);
+		idInputTextField.setTooltip(tooltip);
 		
-		nameInput.textProperty().addListener((observable, oldValue, newValue) ->
+		idInputTextField.textProperty().addListener((observable, oldValue, newValue) ->
 		{
-			if(!newValue.matches("\\d{1,5}"))
-				nameInput.setText(oldValue);
+			if(!newValue.isEmpty() && !newValue.matches("\\d{1,5}"))
+				idInputTextField.setText(oldValue);
 		});
 		
 		HBox inputHBox = new HBox(20);
 		inputHBox.setAlignment(Pos.CENTER);
-		inputHBox.getChildren().addAll(label, nameInput);
+		inputHBox.getChildren().addAll(label, idInputTextField);
 		
 		Button cancelButton = new Button("Cancel");
 		cancelButton.getStyleClass().add("font-size-20");
@@ -75,9 +76,9 @@ public class LoadScenarioIDPopUp
 		{
 			try
 			{
-				if(!nameInput.getText().isEmpty())
+				if(!idInputTextField.getText().isEmpty())
 				{
-					int temp = Integer.parseInt(nameInput.getText());
+					int temp = Integer.parseInt(idInputTextField.getText());
 					if(temp > 0)
 						id = temp;
 					else
@@ -89,7 +90,7 @@ public class LoadScenarioIDPopUp
 			catch(NumberFormatException ignored) { }
 		});
 		
-		nameInput.setOnAction(e -> loadButton.fire());
+		idInputTextField.setOnAction(e -> loadButton.fire());
 		
 		HBox buttonsHBox = new HBox(20);
 		buttonsHBox.getChildren().addAll(cancelButton, loadButton);
@@ -106,6 +107,9 @@ public class LoadScenarioIDPopUp
 	
 	public int showPopUp()
 	{
+		idInputTextField.setText("");
+		idInputTextField.requestFocus();
+		
 		stage.showAndWait();
 		
 		return id;
