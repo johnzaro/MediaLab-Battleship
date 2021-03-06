@@ -483,7 +483,7 @@ public class Main extends Application
 		alert.setTitle("MediaLab Battleship");
 		alert.setHeaderText("Game Has Ended!");
 		alert.setContentText(playerWon ? "You Won!!!" : "CPU Won :(");
-		Optional<ButtonType> result = alert.showAndWait();
+		alert.showAndWait();
 	}
 }
 

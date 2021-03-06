@@ -1,4 +1,4 @@
-module geographyquiz
+module medialab_battleship
 {
 	requires javafx.controls;
 	requires javafx.media;
